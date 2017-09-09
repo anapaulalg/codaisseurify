@@ -17,9 +17,8 @@
   <%= f.label :image %>
   <%= f.text_field :image %>
 
-  <%= f.submit (@artist.new_record? ? "Create" : "Update") %>
+  <%= f.submit (@artist.new_record? ? "Create" : "Update"), class: "btn btn-default" %>
 
-  <br>
   <hr>
-  <%= link_to "[Back to Artists]", root_path %>
+  <%= link_to "Back to Artists", root_path, class: "btn btn-primary" %>
 <% end %>
