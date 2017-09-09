@@ -14,8 +14,8 @@
 <iframe width="560" height="315" src="<%= @song.youtube_link %>" frameborder="0" allowfullscreen></iframe>
 <%end%>
 <br>
-<%= link_to '[Edit Song]', edit_song_path(@song) %>
-<%= link_to '[Back to Songs]', artist_path(@song.artist) %>
+<%= link_to 'Edit Song', edit_song_path(@song), class: "btn btn-default" %>
+<%= link_to 'Back to Songs', artist_path(@song.artist), class: "btn btn-default" %>
 
 <hr>
-<%= link_to "[Back to Artists]", root_path %>
+<%= link_to "Back to Artists", root_path, class: "btn btn-primary" %>
