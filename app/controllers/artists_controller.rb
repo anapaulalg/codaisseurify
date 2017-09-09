@@ -6,4 +6,19 @@ class ArtistsController < ApplicationController
   def show
     @artist = Artist.find(params[:id])
   end
+
+  def new
+    @artist = Artist.new
+  end
+
+  def create
+    artist_params = params.require(:artist).permit(:artist_name, :country, :image)
+    @artist = Artist.new(artist_params)
+    if @artist.save
+       redirect_to @artist
+    else
+       render 'new'
+    end
+  end
+
 end
