@@ -1,5 +1,6 @@
 Artist.destroy_all
 Song.destroy_all
+Photo.destroy_all
 
 artist1 = Artist.create!( { artist_name: "Oasis", country: "England", image: "http://res.cloudinary.com/djxmmaqyo/image/upload/c_scale,w_300/v1504946574/oasis_square_br1zic.jpg" } )
 artist2 = Artist.create!( { artist_name: "Bob Dylan", country: "USA", image: "http://res.cloudinary.com/djxmmaqyo/image/upload/c_scale,w_300/v1504946571/bob_dylan_square_lj82dt.jpg" } )
@@ -23,3 +24,6 @@ song8 = Song.create!( { song_title: "Stand By Me", duration: "05:57" , youtube_l
 
 songs_count = Song.all().length
 puts "#{songs_count} songs were created."
+
+
+photo1 = Photo.create!(remote_image_url: "http://res.cloudinary.com/djxmmaqyo/image/upload/c_scale,w_300/v1504946574/oasis_square_br1zic.jpg", artist: artist1)
