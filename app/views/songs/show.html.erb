@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Song title:</strong>
   <%= @song.song_title %>
@@ -9,12 +7,15 @@
   <strong>Duration:</strong>
   <%= @song.duration %>
 </p>
+<br>
+<p> Listen to this song: </p>
 
-<p>
-  <strong>Youtube link:</strong>
-  <%= @song.youtube_link %>
-</p>
+<% if @song.youtube_link? %>
+<iframe width="560" height="315" src="<%= @song.youtube_link %>" frameborder="0" allowfullscreen></iframe>
+<%end%>
+<br>
+<%= link_to '[Edit Song]', edit_song_path(@song) %>
+<%= link_to '[Back to Songs]', artist_path(@song.artist) %>
 
-
-<%= link_to 'Edit', edit_song_path(@song) %> |
-<%= link_to 'Back', songs_path %>
+<hr>
+<%= link_to "[Back to Artists]", root_path %>

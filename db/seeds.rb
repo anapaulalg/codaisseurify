@@ -18,6 +18,8 @@ song4 = Song.create!( { song_title: "The Times They Are A Changin'", duration: "
 song5 = Song.create!( { song_title: "Otherside", duration:"04:15" , youtube_link: "https://www.youtube.com/embed/rn_YodiJO6k", artist: artist3} )
 song6 = Song.create!( { song_title: "Another Brick In The Wall", duration: "06:00" , youtube_link: "https://www.youtube.com/embed/YR5ApYxkU-U", artist: artist4} )
 song7 = Song.create!( { song_title: "Na Sua Estante", duration:"04:04", youtube_link: "https://www.youtube.com/embed/DP3j6hgS4VY", artist: artist5} )
+song8 = Song.create!( { song_title: "Stand By Me", duration: "05:57" , youtube_link: "https://www.youtube.com/embed/maTP315XZCQ", artist: artist1} )
+
 
 songs_count = Song.all().length
 puts "#{songs_count} songs were created."

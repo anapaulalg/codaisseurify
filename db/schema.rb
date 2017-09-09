@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20170909115750) do
 
   create_table "songs", force: :cascade do |t|
     t.string "song_title"
-    t.datetime "duration"
+    t.string "duration"
     t.string "youtube_link"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -18,7 +18,7 @@
 
   <div class="field">
     <%= form.label :duration %>
-    <%= form.datetime_select :duration, id: :song_duration %>
+    <%= form.text_field :duration, id: :song_duration %>
   </div>
 
   <div class="field">
@@ -26,11 +26,11 @@
     <%= form.text_field :youtube_link, id: :song_youtube_link %>
   </div>
 
+  <%= form.label :artist_id %>
+  <%= form.collection_select(:artist_id, Artist.all, :id, :artist_name) %>
+
   <div class="actions">
     <%= form.submit %>
   </div>
-
-  <%= f.label :artist_id %>
-  <%= f.collection_select(:artist_id, Artist.all, :id, :artist_name) %>
 
 <% end %>

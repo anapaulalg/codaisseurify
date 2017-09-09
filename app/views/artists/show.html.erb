@@ -3,25 +3,29 @@
 <p>Country: <%= @artist.country %></p>
 <%= image_tag @artist.image %>
 
-
-
 <h4>List of songs:</h4>
 
 <% if @artist.songs.any? %>
   <ul>
-    <% @artist.songs.each do |music| %>
-      <li><%= music.song_title %></li>
-      <li><%= music.duration %></li>
+    <% @artist.songs.each do |song| %>
+      <li>
+      <p><%= link_to song.song_title, song_path(song.id) %></p>
+      <p>Duration: <%= song.duration %></p>
+      </li>
 
+<td><%= link_to '[Edit song]', edit_song_path(song) %></td>
+<%= link_to '[Delete song]', song, method: :delete, data: { confirm: 'Are you sure that you want delete this song?' } %>
+
+<br><br>
     <% end %>
   </ul>
 <% else %>
   <p>There are no songs from this artist.</p>
 <% end %>
 
-
+<%= link_to '[Add Song]', new_song_path %>
 
 <hr>
-
-<%= link_to "[Edit]", edit_artist_path(@artist.id) %>
-<%= link_to "[Delete]", artist_path(@artist.id), method: :delete, data: { confirm: "Are you sure?" } %>
+<%= link_to "[Edit Artist]", edit_artist_path(@artist.id) %>
+<%= link_to "[Delete Artist]", artist_path(@artist.id), method: :delete, data: { confirm: "Are you sure?" } %>
+<%= link_to "[Back to Artists]", root_path %>
