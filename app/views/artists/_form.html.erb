@@ -1,5 +1,7 @@
 <%= form_for @artist do |f| %>
 
+<p id="notice"><%= notice %></p>
+
 <ul>
   <% @artist.errors.full_messages.each do |msg| %>
     <li><%= msg %></li>
