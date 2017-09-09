@@ -1,7 +1,5 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+artist1 = Artist.create!( { artist_name: "Oasis", country: "England", image: "http://res.cloudinary.com/djxmmaqyo/image/upload/c_scale,w_300/v1504946574/oasis_square_br1zic.jpg" } )
+artist2 = Artist.create!( { artist_name: "Bob Dylan", country: "USA", image: "http://res.cloudinary.com/djxmmaqyo/image/upload/c_scale,w_300/v1504946571/bob_dylan_square_lj82dt.jpg" } )
+artist3 = Artist.create!( { artist_name: "Red Hot Chili Peppers", country: "USA", image: "http://res.cloudinary.com/djxmmaqyo/image/upload/c_scale,w_300/v1504946592/red_hot_ly5suc.jpg" } )
+artist4 = Artist.create!( { artist_name: "Pink Floyd", country: "England", image: "http://res.cloudinary.com/djxmmaqyo/image/upload/v1504946577/pink-floyd_square0_skgl1y.jpg" } )
+artist5 = Artist.create!( { artist_name: "Pitty", country: "Brazil", image: "http://res.cloudinary.com/djxmmaqyo/image/upload/v1504946581/pitty_square_poef1e.jpg" } )
