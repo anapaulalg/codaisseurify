@@ -23,14 +23,6 @@ ActiveRecord::Schema.define(version: 20170909210124) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "photos", force: :cascade do |t|
-    t.bigint "artist_id"
-    t.string "image"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["artist_id"], name: "index_photos_on_artist_id"
-  end
-
   create_table "songs", force: :cascade do |t|
     t.string "song_title"
     t.string "duration"
@@ -58,6 +50,5 @@ ActiveRecord::Schema.define(version: 20170909210124) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "photos", "artists"
   add_foreign_key "songs", "artists"
 end
