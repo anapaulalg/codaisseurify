@@ -3,7 +3,7 @@ FactoryGirl.define do
     artist_name      { Faker::Lorem.sentence(30) }
     country          { Faker::Lorem.sentence(30) }
     user             { build(:user) }
-end
+ end
 
   factory :song do
     song_title      { Faker::Lorem.sentence(30) }
