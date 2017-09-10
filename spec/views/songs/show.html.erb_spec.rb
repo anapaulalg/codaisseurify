@@ -2,9 +2,14 @@ require 'rails_helper'
 
 RSpec.describe "songs/show", type: :view do
   before(:each) do
+    @artist = assign(:artist, Artist.create!(
+      :artist_name => "MyString",
+      :country => "MyString"
+    ))
     @song = assign(:song, Song.create!(
       :song_title => "Song Title",
-      :youtube_link => "Youtube Link"
+      :youtube_link => "Youtube Link",
+      :artist => @artist
     ))
   end
 

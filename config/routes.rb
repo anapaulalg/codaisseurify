@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
-  resources :songs
-  devise_for :users
   root "artists#index"
-
-resources :artists
-resources :users, only: [:show]
-resources :profiles, only: [:new, :edit, :create, :update]
+  devise_for :users
+  resources :songs
+  resources :artists
+  resources :users, only: [:show]
+  resources :profiles, only: [:new, :edit, :create, :update]
 
   # get "artists" => "artists#index"
   # get 'artists/new' => "artists#new", as: :new_artist

@@ -2,10 +2,16 @@ require 'rails_helper'
 
 RSpec.describe "songs/edit", type: :view do
   before(:each) do
+    @artist = assign(:artist, Artist.create!(
+      :artist_name => "MyString",
+      :country => "MyString"
+    ))
     @song = assign(:song, Song.create!(
       :song_title => "MyString",
-      :youtube_link => "MyString"
+      :youtube_link => "MyString",
+      :artist => @artist
     ))
+
   end
 
   it "renders the edit song form" do
