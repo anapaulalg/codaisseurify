@@ -1,28 +1,28 @@
-<div class="row">
-    <h2>Welcome to Codaisseurify! :) </h2>
-    <div class="panel panel-primary">
-      <div class="panel-heading">
-        <h2>Artists </h2>
-      </div>
-      <div class="panel-body">
-        <div class="row">
-            <% @artists.each do |artist| %>
-              <div class="col-sm-4">
-                <div class="col-sm-12">
-                  <%=  image_tag artist.image, class: "small-image-size" if artist.image.present? %>
-                  <p><%= link_to artist.artist_name, artist_path(artist.id) %></p>
-                </div>
-                <div class="col-sm-12">
-                  <label>Number of songs: <%= artist.songs.length %></label>
-                </div>
-                <div class="col-sm-12">
-                  <%= link_to "Edit", edit_artist_path(artist), class: "btn btn-default" %>
-                </div>
-              </div>
-            <% end %>
-        </div>
-      </div>
+<h2>Welcome to Codaisseurify! :)</h2>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>Artists </h2>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+        <% @artists.each do |artist| %>
+          <div class="col-sm-4">
+            <div class="col-sm-12">
+              <%= image_tag artist.image, class: "small-image-size" if artist.image.present? %>
+            </div>
+            <div class="col-sm-12">
+              <%= link_to artist.artist_name, artist_path(artist.id) %>
+            </div>
+            <div class="col-sm-12">
+              <label>Number of songs: <%= artist.songs.length %></label>
+            </div>
+            <div class="col-sm-12">
+              <%= link_to "Edit", edit_artist_path(artist), class: "btn btn-default" %>
+              <br><br>
+            </div>
+          </div>
+        <% end %>
     </div>
-
-    <%= link_to "Add Artist", new_artist_path, class: "btn btn-primary" %>
+  </div>
 </div>
+<%= link_to "Add Artist", new_artist_path, class: "btn btn-primary" %>

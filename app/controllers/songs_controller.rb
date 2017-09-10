@@ -56,7 +56,7 @@ class SongsController < ApplicationController
   def destroy
     @song.destroy
     respond_to do |format|
-      format.html { redirect_to songs_url, notice: 'Song was successfully destroyed.' }
+      format.html { redirect_to songs_path, notice: 'Song was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -68,10 +68,6 @@ class SongsController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def song_params
-      params.require(:song).permit(:song_title, :duration, :youtube_link)
-    end
-
     def song_params
       params.require(:song).permit(:song_title, :duration, :youtube_link, :artist_id)
     end
