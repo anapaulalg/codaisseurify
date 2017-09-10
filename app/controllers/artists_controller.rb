@@ -21,11 +21,11 @@ class ArtistsController < ApplicationController
   end
 
   def edit
-      @artist = Artist.find(params[:id])
+      @artist = Artist.find(current_user.profile)
   end
 
   def update
-    @artist = Artist.find(params[:id])
+    @artist = Artist.find(current_user.profile)
     if @artist.update_attributes(artist_params)
       redirect_to @artist
     else
@@ -34,7 +34,7 @@ class ArtistsController < ApplicationController
   end
 
   def destroy
-      @artist = Artist.find(params[:id])
+      @artist = Artist.find(current_user.profile)
       @artist.destroy
       redirect_to @artist
     end
