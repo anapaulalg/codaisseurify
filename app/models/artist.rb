@@ -1,9 +1,7 @@
 class Artist < ApplicationRecord
   has_many :songs, dependent: :destroy
-  
-  scope :order_by_name, -> { order(:artist_name) }
 
-  validates :artist_name, presence: true
-  validates :country, presence: true
+  validates :name, presence: true
+  validates :country, presence: false
   validates :image, presence: false
 end

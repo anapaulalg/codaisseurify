@@ -1,44 +1,22 @@
-<%= form_with(model: song, local: true) do |form| %>
+<%= form_for [@song], :url => artist_songs_path do |f| %>
 <div class="panel panel-primary">
    <div class="panel-heading">
      <h2><%= Artist %></div></h2>
     <div class="panel-body">
-      <% if song.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(song.errors.count, "error") %> prohibited this song from being saved:</h2>
-
-          <ul>
-          <% song.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-          </ul>
-        </div>
-      <% end %>
 
       <div class="form-group">
-        <%= form.label :song_title %>
-        <%= form.text_field :song_title, id: :song_song_title, class:"form-control" %>
+        <%= f.label :title %>
+        <%= f.text_field :title, id: :title, class:"form-control" %>
       </div>
 
       <div class="from-group">
-        <%= form.label :duration %>
-        <%= form.text_field :duration, id: :song_duration, class:"form-control" %>
+        <%= f.label :duration %>
+        <%= f.text_field :duration, id: :song_duration, class:"form-control" %>
       </div>
 
-      <div class="form-group">
-        <%= form.label :youtube_link %>
-        <%= form.text_field :youtube_link, id: :song_youtube_link, class:"form-control" %>
-      </div>
-
-      <div class="form-group">
-        <%= form.label :artist_id %>
-      </div>
-      <div class="form-group">
-        <%= form.collection_select(:artist_id, Artist.all, :id, :artist_name, class:"form-control") %>
-      </div>
-      <br/>
+<br>
       <div class="actions">
-        <%= form.submit class: "btn btn-primary" %>
+        <%= f.submit (@song.new_record? ? "Create" : "Update"), class: "btn btn-primary" %>
       </div>
     </div>
 </div>

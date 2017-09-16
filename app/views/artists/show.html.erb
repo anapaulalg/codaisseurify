@@ -1,8 +1,11 @@
 <div class="panel panel-primary">
-   <div class="panel-heading"> <h2><%= @artist.artist_name %></div></h2>
+   <div class="panel-heading"> <h2><%= @artist.name %></div></h2>
     <div class="panel-body">
       <p>Country: <%= @artist.country %></p>
-      <%= image_tag @artist.image, class: "small-image-size" %>
+
+      <% if @artist.image? %>
+        <%= image_tag @artist.image, class: "small-image-size" %>
+      <% end %>
 
       <h4>List of songs:</h4>
 
@@ -10,12 +13,11 @@
         <ul>
           <% @artist.songs.each do |song| %>
             <li>
-              <p><%= link_to song.song_title, song_path(song.id) %></p>
+              <p><%= song.title %></p>
               <p>Duration: <%= song.duration %></p>
             </li>
 
-            <td><%= link_to 'Edit song', edit_song_path(song), class: "btn btn-default" %></td>
-            <%= link_to 'Delete song', song, method: :delete, data: { confirm: 'Are you sure that you want delete this song?'}, class: "btn btn-default"  %>
+            <%= link_to 'Delete song', artist_song_path(@artist, song), method: :delete, data: { confirm: 'Are you sure that you want delete this song?'}, class: "btn btn-default"  %>
 
             <br><br>
           <% end %>
@@ -23,9 +25,8 @@
       <% else %>
         <p>There are no songs from this artist.</p>
       <% end %>
-<%= link_to 'Add Song', new_song_path, class: "btn btn-default" %>
+<%= link_to 'Add Song', new_artist_song_path(@artist), class: "btn btn-default" %>
   </div>
 </div>
-<%= link_to "Edit Artist", edit_artist_path(@artist.id), class: "btn btn-primary" %>
 <%= link_to "Delete Artist", artist_path(@artist.id), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-primary" %>
 <%= link_to "Back to Artists", root_path, class: "btn btn-primary" %>
