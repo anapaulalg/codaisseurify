@@ -1,24 +1,22 @@
-# README
+# Codaisseurify
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project was my first assignment in Codaisseur and was wrote in Ruby on Rails.
+It shows a list of artists and their respective songs.
 
-Things you may want to cover:
+# Running application
 
-* Ruby version
+To run this app, clone the repository and type in the terminal:
 
-* System dependencies
+```rails db:create db:migrate db:seed```
 
-* Configuration
+```rails s```
 
-* Database creation
+Visit http://localhost:3000
 
-* Database initialization
+# Preview
 
-* How to run the test suite
+List of artists:
+![alt text](http://res.cloudinary.com/djxmmaqyo/image/upload/v1510050212/Screenshot_from_2017-11-07_11-21-26_kaonzw.png)
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+List of songs by one artist:
+![alt text](http://res.cloudinary.com/djxmmaqyo/image/upload/v1510050212/Screenshot_from_2017-11-07_11-21-43_hu7lju.png)
