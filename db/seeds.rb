@@ -9,6 +9,7 @@ artist5 = Artist.create!( { name: "Pitty", country: "Brazil", image: "http://res
 artists_count = Artist.all().length
 puts "#{artists_count} artists were created."
 
+<<<<<<< HEAD
 song1 = Song.create!( { title: "Wonderwall", duration: "04:38" , artist: artist1} )
 song2 = Song.create!( { title: "Whatever", duration: "06:22" , artist: artist1} )
 song3 = Song.create!( { title: "Like a Rolling Stone", duration: "05:59" , artist: artist2} )
@@ -21,5 +22,19 @@ song9 = Song.create!( { title: "Californication", duration:"05:21" ,  artist: ar
 song10 = Song.create!( { title: "Wish You Were Here", duration: "04:51" , artist: artist4} )
 song11 = Song.create!( { title: "Comfortably Numb", duration: "06:54" , artist: artist4} )
 song12 = Song.create!( { title: "Stop Crying Your Heart Out", duration: "04:55" , artist: artist1} )
+=======
+song1 = Song.create!( { title: "Wonderwall", duration: "04:38", artist: artist1} )
+song2 = Song.create!( { title: "Whatever", duration: "06:22", artist: artist1} )
+song3 = Song.create!( { title: "Like a Rolling Stone", duration: "05:59", artist: artist2} )
+song4 = Song.create!( { title: "The Times They Are A Changin'", duration: "02:37", artist: artist2} )
+song5 = Song.create!( { title: "Otherside", duration:"04:15", artist: artist3} )
+song6 = Song.create!( { title: "Another Brick In The Wall", duration: "06:00", artist: artist4} )
+song7 = Song.create!( { title: "Na Sua Estante", duration:"04:04", artist: artist5} )
+song8 = Song.create!( { title: "Stand By Me", duration: "05:57", artist: artist1} )
+song9 = Song.create!( { title: "Californication", duration:"05:21", artist: artist3} )
+song10 = Song.create!( { title: "Wish You Were Here", duration: "04:51", artist: artist4} )
+song11 = Song.create!( { title: "Comfortably Numb", duration: "06:54", artist: artist4} )
+song12 = Song.create!( { title: "Stop Crying Your Heart Out", duration: "04:55", artist: artist1} )
+>>>>>>> 7b71cb77997069ed5f878eb13b343e8b39ff26cf
 songs_count = Song.all().length
 puts "#{songs_count} songs were created."

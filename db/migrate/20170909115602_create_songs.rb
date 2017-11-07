@@ -3,7 +3,6 @@ class CreateSongs < ActiveRecord::Migration[5.1]
     create_table :songs do |t|
       t.string :title
       t.string :duration
-      t.string :youtube_link
 
       t.timestamps
     end

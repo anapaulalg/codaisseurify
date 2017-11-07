@@ -1,6 +1,4 @@
 class SongsController < ApplicationController
-  # before_action :set_song, only: [:show, :edit, :update, :destroy]
-
   def index
     @songs = Song.all
   end
@@ -36,6 +34,6 @@ class SongsController < ApplicationController
   end
 
   def song_params
-    params.require(:song).permit(:title, :duration, :youtube_link, :artist_id)
+    params.require(:song).permit(:title, :duration, :artist_id)
   end
 end
